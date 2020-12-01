@@ -1,0 +1,17 @@
+{
+  "name": "bowling",
+  "version": "1.0.0",
+  "description": "Simple bowling game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Tammy Treit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
