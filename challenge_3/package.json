@@ -4,8 +4,8 @@
   "description": "Simple bowling game",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build-dev": "webpack --config webpack.config.js"
+    "start": "nodemon server.js",
+    "build-dev": "webpack --config webpack.config.js --watch"
   },
   "author": "Tammy Treit",
   "license": "ISC",

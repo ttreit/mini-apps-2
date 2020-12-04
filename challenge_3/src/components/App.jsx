@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import CurrentFrame from './CurrentFrame.jsx'
+import Display from './Display.jsx';
+import InputForm from './InputForm.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -8,8 +11,12 @@ class App extends Component {
     }
   }
   render() {
-    return <h1>App.jsx Temp Text</h1>
+    return (
+      <div>
+        <Display />
+        <InputForm />
+      </div>
+    );
   }
 }
-
 export default App;
