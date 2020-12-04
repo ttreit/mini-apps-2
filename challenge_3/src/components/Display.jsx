@@ -6,7 +6,7 @@ function Display(props) {
   const finalScores = [1, 7, 6];
   return (
   <div>
-  <h1>Display {scores[0]}</h1>
+  <h1>Scorecard</h1>
     <table>
       <thead>
         <tr>

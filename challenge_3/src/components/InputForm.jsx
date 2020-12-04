@@ -1,8 +1,14 @@
 import React from 'react';
+import InputScore from './InputScore.jsx';
 
 function InputForm(props) {
+  const frame = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
   return (
-    <h1>InputForm</h1>
+    <div>
+      <h1>Frame {frame[0]}</h1>
+      <InputScore />
+    </div>
   );
 }
 
