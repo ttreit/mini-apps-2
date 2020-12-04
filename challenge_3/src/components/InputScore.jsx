@@ -11,12 +11,13 @@ class InputScore extends Component {
   }
 
   handleChange(event) {
-    this.setState({newScore: event.target.value});  //value or ns?
+    this.setState({newScore: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
     {console.log(this.state.newScore)}
+
   }
 
   render() {
