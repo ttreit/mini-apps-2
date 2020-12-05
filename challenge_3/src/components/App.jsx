@@ -49,6 +49,13 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     //put score in scores dictionary
+    if (this.state.newScore === "") {
+      this.state.scores[this.state.currentFrame].push(0);
+    } else if (this.state.newScore < 0) {
+      this.state.scores[this.state.currentFrame].push(Math.abs(parseInt(this.state.newScore)))
+    } else {
+      this.state.scores[this.state.currentFrame].push(parseInt(this.state.newScore));
+    }
 
 
 
