@@ -12,7 +12,10 @@ class App extends Component {
       currentFrame: 1,
       scores: [],
       finalScores: [],
-      frameCounter: 1
+      frameCounter: 1,
+      newFrame: true,
+      newFrameScoresPosition: 0,
+      strikes: []
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,20 +28,36 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    //preserve newScore state
+    //put score in scores array
     if (this.state.newScore === "") {
-      this.state.scores.push('0');
+      this.state.scores.push(0);
+    } else if (this.state.newScore < 0) {
+      this.state.scores.push(Math.abs(parseInt(this.state.newScore)))
     } else {
-      this.state.scores.push(this.state.newScore);
+      this.state.scores.push(parseInt(this.state.newScore));
     }
-    //count Frames
-    this.setState({frameCounter: this.state.frameCounter + 1 });
-    console.log('frameCounter', this.state.frameCounter);
-    if (!isOdd(this.state.frameCounter)) {
-      this.setState({currentFrame: this.state.currentFrame + 1});
-    }
+
     //initiate scoring
-    scoring(this.state.scores);
+
+    //check if first half of frame is a strike
+    if (this.state.newFrame) {
+      if (this.state.scores[this.state.newFrameScoresPosition] === 10) {
+        this.state.strikes.push(this.state.currentFrame);
+        this.state.finalScores.push(this.state.scores[this.state.newFrameScoresPosition]);
+        this.state.scores.push("");
+        this.setState({currentFrame: this.state.currentFrame + 1})
+        this.setState({newFrame: true});
+        this.setState({newFrameScoresPosition: this.state.newFrameScoresPosition + 2});
+      }
+
+
+    }
+
+    //scoring(this.state.scores);
+
+
+
+
     //clear newScore state
     this.setState({newScore: ""});
   }
