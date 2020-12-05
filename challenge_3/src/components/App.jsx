@@ -65,13 +65,14 @@ class App extends Component {
       if (this.state.scores[this.state.currentFrame][0] === 10) {
         this.state.strikes.push(this.state.currentFrame);
         this.state.finalScores[this.state.currentFrame].push(10);
+        this.setState({currentFrame: this.state.currentFrame +1 })
       } else {
         //Not a strike
         console.log('move to second half of frame');
       }
     } else {
       //Second half of frame
-      if (this.state.scores[0] === 10) {
+      if (this.state.scores[this.state.currentFrame][0] === 10) {
         this.setState({currentFrame: this.state.currentFrame + 1});
       } else {
         let totalFrameScore = this.state.scores[this.state.currentFrame][0] + this.state.scores[this.state.currentFrame][1];
