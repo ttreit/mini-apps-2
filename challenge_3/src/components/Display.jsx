@@ -2,8 +2,8 @@ import React from 'react';
 
 function Display(props) {
 
-  const scores = [1, 0, 0, 7, 1, 5];
-  const finalScores = [1, 7, 6];
+  let scores = props.scores;
+  let finalScores = props.finalScores;
   return (
   <div>
   <h1>Scorecard</h1>
