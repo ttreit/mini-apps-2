@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Display from './Display.jsx';
 import InputBox from './InputBox.jsx';
+import scoring from '../scoring.js';
+import isOdd from '../isOdd.js';
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +11,9 @@ class App extends Component {
       newScore: "",
       currentFrame: 1,
       scores: [],
-      finalScores: []
+      finalScores: [],
+      frameCounter: 1
+
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,9 +26,18 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    {console.log(this.state.newScore)}
-    //preserve state
-    //clear state
+    //preserve newScore state
+    this.state.scores.push(this.state.newScore);
+    //count Frames
+    this.setState({frameCounter: this.state.frameCounter + 1 });
+    console.log('frameCounter', this.state.frameCounter);
+    if (!isOdd(this.state.frameCounter)) {
+      this.setState({currentFrame: this.state.currentFrame + 1});
+    }
+    //initiate scoring
+    scoring(this.state.scores);
+    //clear newScore state
+    this.setState({newScore: ""});
   }
 
   render() {
