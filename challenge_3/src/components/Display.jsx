@@ -36,16 +36,16 @@ function Display(props) {
         <td>{scores[10][0]} {scores[10][1]}</td>
         </tr>
         <tr>
-        <td>{finalScores[0]} </td>
-        <td>{finalScores[1]} </td>
-        <td>{finalScores[2]} </td>
-        <td>{finalScores[3]} </td>
-        <td>{finalScores[4]} </td>
-        <td>{finalScores[5]} </td>
-        <td>{finalScores[6]} </td>
-        <td>{finalScores[7]} </td>
-        <td>{finalScores[8]} </td>
-        <td>{finalScores[9]} </td>
+        <td>{finalScores[1][0]} </td>
+        <td>{finalScores[2][0]} </td>
+        <td>{finalScores[3][0]} </td>
+        <td>{finalScores[4][0]} </td>
+        <td>{finalScores[5][0]} </td>
+        <td>{finalScores[6][0]} </td>
+        <td>{finalScores[7][0]} </td>
+        <td>{finalScores[8][0]} </td>
+        <td>{finalScores[9][0]} </td>
+        <td>{finalScores[10][0]} </td>
         </tr>
       </tbody>
     </table>
