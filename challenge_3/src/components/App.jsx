@@ -48,9 +48,11 @@ class App extends Component {
         this.setState({currentFrame: this.state.currentFrame + 1})
         this.setState({newFrame: true});
         this.setState({newFrameScoresPosition: this.state.newFrameScoresPosition + 2});
+      } else {
+        this.setState({newFrame: false});
       }
-
-
+    } else {
+      this.state.finalScores.push(scores[this.state.currentFrame] + scores[this.state.currentFrame - 1])
     }
 
     //scoring(this.state.scores);
