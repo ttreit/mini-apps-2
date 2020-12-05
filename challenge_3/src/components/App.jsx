@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       newScore: "",
-      currentFrame: 5,
+      currentFrame: 1,
       scores: [],
       finalScores: []
     }
