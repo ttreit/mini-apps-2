@@ -2,12 +2,11 @@ import React from 'react';
 import InputScore from './InputScore.jsx';
 
 function InputBox(props) {
-  const frame = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   return (
     <div>
-      <h1>Frame {frame[0]}</h1>
-      <InputScore />
+      <h1>Frame {props.currentFrame}</h1>
+      <InputScore newScore={props.newScore} handleChange={props.handleChange} handleSubmit={props.handleSubmit}/>
     </div>
   );
 }
