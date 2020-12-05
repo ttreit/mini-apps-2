@@ -10,7 +10,7 @@ class InputScore extends Component {
       <div>
       <form onSubmit={this.props.handleSubmit}>
         <label>
-          Enter Score
+          Enter Score:
           <input type="number" value={this.props.newScore} onChange={this.props.handleChange} />
         </label>
         <input type="submit" value="Submit" />
