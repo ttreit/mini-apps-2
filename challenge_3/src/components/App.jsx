@@ -72,17 +72,16 @@ class App extends Component {
       }
     } else {
       //Second half of frame
-      if (this.state.scores[this.state.currentFrame][0] === 10) {
-        this.setState({currentFrame: this.state.currentFrame + 1});
-      } else {
-        let totalFrameScore = this.state.scores[this.state.currentFrame][0] + this.state.scores[this.state.currentFrame][1];
+      let totalFrameScore = this.state.scores[this.state.currentFrame][0] + this.state.scores[this.state.currentFrame][1];
         if (totalFrameScore === 10) {
-          //deal with spare TODO
+          this.state.spares.push(this.state.currentFrame);
+          this.state.finalScores[this.state.currentFrame].push(totalFrameScore);
+          this.setState({currentFrame: this.state.currentFrame + 1});
+
         } else {
           this.state.finalScores[this.state.currentFrame].push(totalFrameScore);
           this.setState({currentFrame: this.state.currentFrame + 1});
         }
-      }
 
     }
 
