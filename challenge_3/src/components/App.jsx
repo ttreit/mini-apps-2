@@ -13,7 +13,6 @@ class App extends Component {
       scores: [],
       finalScores: [],
       frameCounter: 1
-
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,7 +26,11 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     //preserve newScore state
-    this.state.scores.push(this.state.newScore);
+    if (this.state.newScore === "") {
+      this.state.scores.push('0');
+    } else {
+      this.state.scores.push(this.state.newScore);
+    }
     //count Frames
     this.setState({frameCounter: this.state.frameCounter + 1 });
     console.log('frameCounter', this.state.frameCounter);
