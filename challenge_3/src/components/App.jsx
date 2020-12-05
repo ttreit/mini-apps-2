@@ -58,11 +58,17 @@ class App extends Component {
     }
 
 
-
-    //initiate scoring
-
     //check if first half of frame is a strike
-
+    if (this.state.scores[this.state.currentFrame].length === 1) {
+      if (this.state.scores[this.state.currentFrame][0] === 10) {
+        this.state.strikes.push(this.state.currentFrame);
+        this.state.scores[this.state.currentFrame].push(10);
+        this.state.currentFrame = this.state.currentFrame + 1;
+      } else {
+        //first half of frame no strike
+        console.log('move to second half of frame');
+      }
+    }
 
 
 
