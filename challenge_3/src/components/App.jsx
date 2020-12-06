@@ -46,8 +46,11 @@ class App extends Component {
     this.setState({newScore: event.target.value});
   }
 
+
+
   handleSubmit(event) {
     event.preventDefault();
+
     //put score in scores dictionary
     if (this.state.newScore === "") {
       this.state.scores[this.state.currentFrame].push(0);
@@ -65,6 +68,10 @@ class App extends Component {
       if (this.state.scores[this.state.currentFrame][0] === 10) {
         this.state.strikes.push(this.state.currentFrame);
         this.state.finalScores[this.state.currentFrame].push(10);
+        //check for previous strikes
+        if (this.state.strikes.includes(this.state.currentFrame - 1)) {
+          console.log(`Frame ${this.state.currentFrame - 1} had a strike`);
+        }
         this.setState({currentFrame: this.state.currentFrame +1 })
       } else {
         //Not a strike
