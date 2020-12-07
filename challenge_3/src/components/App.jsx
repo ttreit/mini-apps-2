@@ -68,24 +68,40 @@ class App extends Component {
       if (this.state.scores[this.state.currentFrame][0] === 10) {
         this.state.strikes.push(this.state.currentFrame);
         this.state.finalScores[this.state.currentFrame].push(10);
-        //check for previous strikes
+        //check for previous strikes and spares
         if (this.state.strikes.includes(this.state.currentFrame - 1) || this.state.spares.includes(this.state.currentFrame - 1)) {
           console.log(`Frame ${this.state.currentFrame - 1} had a strike or a spare`);
           //add 10 to previous frame finalScore
           console.log('previous frame score is', this.state.finalScores[this.state.currentFrame - 1][0])
           this.state.finalScores[this.state.currentFrame - 1][0] = this.state.finalScores[this.state.currentFrame - 1][0] + 10;
+          //if previous was strike check for strike 2 frames back
+          if (this.state.strikes.includes(this.state.currentFrame - 1)) {
+            if (this.state.strikes.includes(this.state.currentFrame - 2)) {
+              this.state.finalScores[this.state.currentFrame - 2][0] = this.state.finalScores[this.state.currentFrame - 2][0] + 10;
+            }
+          }
 
         }
         this.setState({currentFrame: this.state.currentFrame +1 })
       } else {
         //Not a strike
-        console.log('move to second half of frame');
         if (this.state.spares.includes(this.state.currentFrame - 1)) {
           console.log(`Frame ${this.state.currentFrame - 1} had a spare`);
           //add total to previous frame finalScore
           console.log('previous frame score is', this.state.finalScores[this.state.currentFrame - 1][0])
           this.state.finalScores[this.state.currentFrame - 1][0] = this.state.finalScores[this.state.currentFrame - 1][0] + this.state.scores[this.state.currentFrame][0];
+        } else {
+           //if previous was strike check for strike 2 frames back
+           if (this.state.strikes.includes(this.state.currentFrame - 1)) {
+            if (this.state.strikes.includes(this.state.currentFrame - 2)) {
+              console.log(`frame ${this.state.currentFrame - 2} had a strike`);
+              this.state.finalScores[this.state.currentFrame - 2][0] = this.state.finalScores[this.state.currentFrame - 2][0] + this.state.scores[this.state.currentFrame][0];
+              console.log('TEST', this.state.scores[this.state.currentFrame][0]);
+
+            }
+          }
         }
+        console.log('move to second half of frame');
 
       }
     } else {
