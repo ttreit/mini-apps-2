@@ -4,6 +4,7 @@ function Display(props) {
 
   let scores = props.scores;
   let finalScores = props.finalScores;
+  let total = props.total;
   return (
   <div>
   <h1>Scorecard</h1>
@@ -20,6 +21,7 @@ function Display(props) {
         <th>8</th>
         <th>9</th>
         <th>10</th>
+        <th>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -34,6 +36,7 @@ function Display(props) {
         <td>{scores[8][0]} {scores[8][1]}</td>
         <td>{scores[9][0]} {scores[9][1]}</td>
         <td>{scores[10][0]} {scores[10][1]}</td>
+        <td>{scores[11][0]} {scores[11][1]}</td>
         </tr>
         <tr>
         <td>{finalScores[1][0]} </td>
@@ -46,6 +49,7 @@ function Display(props) {
         <td>{finalScores[8][0]} </td>
         <td>{finalScores[9][0]} </td>
         <td>{finalScores[10][0]} </td>
+        <td>{total}</td>
         </tr>
       </tbody>
     </table>

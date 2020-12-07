@@ -20,7 +20,8 @@ class App extends Component {
         7: [],
         8: [],
         9: [],
-        10: []
+        10: [],
+        11: []
       },
       finalScores: {
         1: [],
@@ -35,7 +36,8 @@ class App extends Component {
         10: []
       },
       strikes: [],
-      spares: []
+      spares: [],
+      total: 0
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -131,6 +133,17 @@ class App extends Component {
 
     }
 
+    //running total
+    //get total
+    let runningTotal = 0;
+    if (this.state.finalScores[1].length !== 0) {
+      for (let i = this.state.currentFrame; i > 0; i--) {
+        runningTotal = runningTotal + this.state.finalScores[i][0];
+      }
+    }
+    this.setState({total: runningTotal});
+    //set state with new total
+
 
 
 
@@ -138,12 +151,13 @@ class App extends Component {
 
     //clear newScore state
     this.setState({newScore: ""});
+
   }
 
   render() {
     return (
       <div>
-        <Display scores={this.state.scores} finalScores={this.state.finalScores}/>
+        <Display scores={this.state.scores} finalScores={this.state.finalScores} total={this.state.total}/>
         <InputBox handleChange={this.handleChange} handleSubmit={this.handleSubmit} newScore={this.state.newScore} currentFrame={this.state.currentFrame}/>
       </div>
     );
