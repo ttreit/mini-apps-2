@@ -141,13 +141,10 @@ class App extends Component {
         runningTotal = runningTotal + this.state.finalScores[i][0];
       }
     }
-    this.setState({total: runningTotal});
-    //set state with new total
-
-
-
-
-
+    console.log('TYPEOF', typeof runningTotal, runningTotal);
+    if (!isNaN(runningTotal)) {
+      this.setState({total: runningTotal});
+    }
 
     //clear newScore state
     this.setState({newScore: ""});
