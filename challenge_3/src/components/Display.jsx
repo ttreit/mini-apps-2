@@ -36,7 +36,7 @@ function Display(props) {
         <td>{scores[8][0]} {scores[8][1]}</td>
         <td>{scores[9][0]} {scores[9][1]}</td>
         <td>{scores[10][0]} {scores[10][1]}</td>
-        <td>{scores[11][0]} {scores[11][1]}</td>
+        <td></td>
         </tr>
         <tr>
         <td>{finalScores[1][0]} </td>

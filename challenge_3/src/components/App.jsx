@@ -32,7 +32,7 @@ class App extends Component {
         8: [],
         9: [],
         10: [],
-        11: []
+        11: [0, 0]
       },
       strikes: [],
       spares: [],
@@ -72,7 +72,7 @@ class App extends Component {
           if (this.state.strikes.includes(this.state.currentFrame - 1) || this.state.spares.includes(this.state.currentFrame - 1)) {
             console.log(`Frame ${this.state.currentFrame - 1} had a strike or a spare`);
             //add 10 to previous frame finalScore
-            console.log('previous frame score is', this.state.finalScores[this.state.currentFrame - 1][0])
+            console.log('previous frame score is', this.state.finalScores[this.state.currentFrame - 1][0]);
             this.state.finalScores[this.state.currentFrame - 1][0] = this.state.finalScores[this.state.currentFrame - 1][0] + 10;
             //if previous was strike check for strike 2 frames back
             if (this.state.strikes.includes(this.state.currentFrame - 1)) {
@@ -87,7 +87,7 @@ class App extends Component {
           if (this.state.spares.includes(this.state.currentFrame - 1)) {
             console.log(`Frame ${this.state.currentFrame - 1} had a spare`);
             //add total to previous frame finalScore
-            console.log('previous frame score is', this.state.finalScores[this.state.currentFrame - 1][0])
+            console.log('previous frame score is', this.state.finalScores[this.state.currentFrame - 1][0]);
             this.state.finalScores[this.state.currentFrame - 1][0] = this.state.finalScores[this.state.currentFrame - 1][0] + this.state.scores[this.state.currentFrame][0];
           } else {
             //if previous was strike check for strike 2 frames back
@@ -132,6 +132,17 @@ class App extends Component {
     } else {
       //11th frame handling
       console.log('11th FRAME');
+      //if 10th is spare
+      if (this.state.spares.includes(10)) {
+        console.log('The tenth frame has a spare')
+      }
+
+      //if 10th is strike
+      if (this.state.strikes.includes(10)) {
+        console.log('the tenth frame has a STRIKE')
+
+      }
+
     }
 
     //running total
@@ -147,13 +158,14 @@ class App extends Component {
       }
       if (this.state.strikes.includes(10)) {
         for (let i = this.state.currentFrame - 1; i > 0; i--) {
-          runningTotal = runningTotal + this.state.finalScores[i][0];
+          runningTotal = runningTotal + this.state.finalScores[11][0];
+
         }
       }
     } else {
       if (this.state.finalScores[1].length !== 0) {
         for (let i = this.state.currentFrame; i > 0; i--) {
-            runningTotal = runningTotal + this.state.finalScores[i][0];
+          runningTotal = runningTotal + this.state.finalScores[i][0];
         }
       }
     }
