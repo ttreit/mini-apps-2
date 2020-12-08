@@ -32,7 +32,7 @@ class App extends Component {
         8: [],
         9: [],
         10: [],
-        11: [0, 0]
+        11: []
       },
       strikes: [],
       spares: [],
@@ -134,12 +134,16 @@ class App extends Component {
       console.log('11th FRAME');
       //if 10th is spare
       if (this.state.spares.includes(10)) {
-        console.log('The tenth frame has a spare')
+        console.log('The tenth frame has a spare');
+        this.state.finalScores[10][0] = this.state.finalScores[10][0] + this.state.scores[11][0];
+        this.setState({currentFrame: 12})  //set to -1 to not go forward add later
       }
 
       //if 10th is strike
       if (this.state.strikes.includes(10)) {
         console.log('the tenth frame has a STRIKE')
+        this.state.finalScores[10][0] = this.state.finalScores[10][0] + this.state.scores[11][0] + this.state.scores[11][1];
+        //this.setState({currentFrame: 12})
 
       }
 
