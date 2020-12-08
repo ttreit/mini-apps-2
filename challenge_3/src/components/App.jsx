@@ -33,7 +33,8 @@ class App extends Component {
         7: [],
         8: [],
         9: [],
-        10: []
+        10: [],
+        11: []
       },
       strikes: [],
       spares: [],
@@ -131,11 +132,31 @@ class App extends Component {
     //running total
     //get total
     let runningTotal = 0;
-    if (this.state.finalScores[1].length !== 0) {
-      for (let i = this.state.currentFrame; i > 0; i--) {
-        runningTotal = runningTotal + this.state.finalScores[i][0];
+
+    if (this.state.spares.includes(10) || this.state.strikes.includes(10)) {
+      console.log('weird 10th frame!')
+      if (this.state.spares.includes(10)) {
+        for (let i = this.state.currentFrame - 1; i > 0; i--) {
+          runningTotal = runningTotal + this.state.finalScores[i][0];
+        }
+      }
+    } else {
+      if (this.state.finalScores[1].length !== 0) {
+        for (let i = this.state.currentFrame; i > 0; i--) {
+            runningTotal = runningTotal + this.state.finalScores[i][0];
+        }
       }
     }
+
+
+
+
+
+
+
+
+
+
     console.log('TYPEOF', typeof runningTotal, runningTotal);
     if (!isNaN(runningTotal)) {
       this.setState({ total: runningTotal });
