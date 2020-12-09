@@ -142,6 +142,11 @@ class App extends Component {
       //if 10th is strike
       if (this.state.strikes.includes(10) && this.state.scores[11].length > 1) {
        console.log('SCORES IN 11th RECORDED')
+       if (this.state.strikes.includes(this.state.currentFrame - 1)) {
+        if (this.state.strikes.includes(this.state.currentFrame - 2)) {
+          this.state.finalScores[this.state.currentFrame - 2][0] = this.state.finalScores[this.state.currentFrame - 2][0] + 10;
+        }
+      }
        this.state.finalScores[10][0] = this.state.finalScores[10][0] + this.state.scores[11][0] + this.state.scores[11][1];
        this.setState({currentFrame: 12});
       }
