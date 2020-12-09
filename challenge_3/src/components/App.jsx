@@ -154,7 +154,16 @@ class App extends Component {
 
     if (this.state.spares.includes(10) || this.state.strikes.includes(10)) {
       console.log('weird 10th frame!')
-      if (this.state.spares.includes(10)) {
+      if (this.state.spares.includes(10) && this.state.currentFrame === 10) {
+        if (this.state.finalScores[1].length !== 0) {
+          for (let i = this.state.currentFrame; i > 0; i--) {
+            runningTotal = runningTotal + this.state.finalScores[i][0];
+          }
+        }
+      }
+
+      if (this.state.spares.includes(10) && this.state.currentFrame === 11) {
+        console.log('****', this.state.currentFrame);
         for (let i = this.state.currentFrame - 1; i > 0; i--) {
           runningTotal = runningTotal + this.state.finalScores[i][0];
         }
@@ -162,8 +171,10 @@ class App extends Component {
       if (this.state.strikes.includes(10)) {
         for (let i = this.state.currentFrame - 1; i > 0; i--) {
           runningTotal = runningTotal + this.state.finalScores[i][0] + this.state.finalScores[i][1];
-
         }
+        if (this.state.scores[11].length > 1) {
+          runningTotal = runningTotal + this.state.finalScores[11];
+      }
       }
     } else {
       if (this.state.finalScores[1].length !== 0) {
