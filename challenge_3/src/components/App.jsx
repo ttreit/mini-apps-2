@@ -177,8 +177,8 @@ class App extends Component {
       }
 
       if (this.state.strikes.includes(10) && this.state.currentFrame === 11) {
-        for (let i = this.state.currentFrame - 1; i > 0; i--) {
-          runningTotal = runningTotal + this.state.finalScores[i][0] + this.state.finalScores[i][1];
+        for (let i = 10; i > 0; i--) {
+          runningTotal = runningTotal + this.state.finalScores[i][0];
         }
         if (this.state.scores[11].length > 1) {
           runningTotal = runningTotal + this.state.finalScores[11];
