@@ -140,11 +140,10 @@ class App extends Component {
       }
 
       //if 10th is strike
-      if (this.state.strikes.includes(10)) {
-        console.log('the tenth frame has a STRIKE')
-        this.state.finalScores[10][0] = this.state.finalScores[10][0] + this.state.scores[11][0] + this.state.scores[11][1];
-        //this.setState({currentFrame: 12})
-
+      if (this.state.strikes.includes(10) && this.state.scores[11].length > 1) {
+       console.log('SCORES IN 11th RECORDED')
+       this.state.finalScores[10][0] = this.state.finalScores[10][0] + this.state.scores[11][0] + this.state.scores[11][1];
+       this.setState({currentFrame: 12});
       }
 
     }
@@ -162,7 +161,7 @@ class App extends Component {
       }
       if (this.state.strikes.includes(10)) {
         for (let i = this.state.currentFrame - 1; i > 0; i--) {
-          runningTotal = runningTotal + this.state.finalScores[11][0];
+          runningTotal = runningTotal + this.state.finalScores[i][0] + this.state.finalScores[i][1];
 
         }
       }
@@ -173,14 +172,6 @@ class App extends Component {
         }
       }
     }
-
-
-
-
-
-
-
-
 
 
     console.log('TYPEOF', typeof runningTotal, runningTotal);
