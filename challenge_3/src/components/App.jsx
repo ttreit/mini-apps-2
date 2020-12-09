@@ -168,7 +168,15 @@ class App extends Component {
           runningTotal = runningTotal + this.state.finalScores[i][0];
         }
       }
-      if (this.state.strikes.includes(10)) {
+      if (this.state.strikes.includes(10) && this.state.currentFrame === 10) {
+        if (this.state.finalScores[1].length !== 0) {
+          for (let i = this.state.currentFrame; i > 0; i--) {
+            runningTotal = runningTotal + this.state.finalScores[i][0];
+          }
+        }
+      }
+
+      if (this.state.strikes.includes(10) && this.state.currentFrame === 11) {
         for (let i = this.state.currentFrame - 1; i > 0; i--) {
           runningTotal = runningTotal + this.state.finalScores[i][0] + this.state.finalScores[i][1];
         }
