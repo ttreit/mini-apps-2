@@ -1,0 +1,30 @@
+body {
+  background-color: #282c34;
+  color: white;
+  padding: 40px;
+  font-family: Arial;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+label {
+  width:18px;
+  padding-right:5px;
+}
+
+input {
+  margin-left: 5px;
+  width: 55px;
+}
