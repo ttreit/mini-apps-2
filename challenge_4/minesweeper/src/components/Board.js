@@ -1,9 +1,5 @@
 import React from 'react';
 
-// function createTable(props) {
-//   return props.contents.map(())
-// }
-
 function Board(props) {
   return <div>
     <table>
@@ -12,16 +8,121 @@ function Board(props) {
           <td>{props.contents[0][0]}</td>
           <td>{props.contents[0][1]}</td>
           <td>{props.contents[0][2]}</td>
+          <td>{props.contents[0][3]}</td>
+          <td>{props.contents[0][4]}</td>
+          <td>{props.contents[0][5]}</td>
+          <td>{props.contents[0][6]}</td>
+          <td>{props.contents[0][7]}</td>
+          <td>{props.contents[0][8]}</td>
+          <td>{props.contents[0][9]}</td>
         </tr>
         <tr>
           <td>{props.contents[1][0]}</td>
           <td>{props.contents[1][1]}</td>
           <td>{props.contents[1][2]}</td>
+          <td>{props.contents[1][3]}</td>
+          <td>{props.contents[1][4]}</td>
+          <td>{props.contents[1][5]}</td>
+          <td>{props.contents[1][6]}</td>
+          <td>{props.contents[1][7]}</td>
+          <td>{props.contents[1][8]}</td>
+          <td>{props.contents[1][9]}</td>
         </tr>
         <tr>
           <td>{props.contents[2][0]}</td>
           <td>{props.contents[2][1]}</td>
           <td>{props.contents[2][2]}</td>
+          <td>{props.contents[2][3]}</td>
+          <td>{props.contents[2][4]}</td>
+          <td>{props.contents[2][5]}</td>
+          <td>{props.contents[2][6]}</td>
+          <td>{props.contents[2][7]}</td>
+          <td>{props.contents[2][8]}</td>
+          <td>{props.contents[2][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[3][0]}</td>
+          <td>{props.contents[3][1]}</td>
+          <td>{props.contents[3][2]}</td>
+          <td>{props.contents[3][3]}</td>
+          <td>{props.contents[3][4]}</td>
+          <td>{props.contents[3][5]}</td>
+          <td>{props.contents[3][6]}</td>
+          <td>{props.contents[3][7]}</td>
+          <td>{props.contents[3][8]}</td>
+          <td>{props.contents[3][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[4][0]}</td>
+          <td>{props.contents[4][1]}</td>
+          <td>{props.contents[4][2]}</td>
+          <td>{props.contents[4][3]}</td>
+          <td>{props.contents[4][4]}</td>
+          <td>{props.contents[4][5]}</td>
+          <td>{props.contents[4][6]}</td>
+          <td>{props.contents[4][7]}</td>
+          <td>{props.contents[4][8]}</td>
+          <td>{props.contents[4][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[5][0]}</td>
+          <td>{props.contents[5][1]}</td>
+          <td>{props.contents[5][2]}</td>
+          <td>{props.contents[5][3]}</td>
+          <td>{props.contents[5][4]}</td>
+          <td>{props.contents[5][5]}</td>
+          <td>{props.contents[5][6]}</td>
+          <td>{props.contents[5][7]}</td>
+          <td>{props.contents[5][8]}</td>
+          <td>{props.contents[5][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[6][0]}</td>
+          <td>{props.contents[6][1]}</td>
+          <td>{props.contents[6][2]}</td>
+          <td>{props.contents[6][3]}</td>
+          <td>{props.contents[6][4]}</td>
+          <td>{props.contents[6][5]}</td>
+          <td>{props.contents[6][6]}</td>
+          <td>{props.contents[6][7]}</td>
+          <td>{props.contents[6][8]}</td>
+          <td>{props.contents[6][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[7][0]}</td>
+          <td>{props.contents[7][1]}</td>
+          <td>{props.contents[7][2]}</td>
+          <td>{props.contents[7][3]}</td>
+          <td>{props.contents[7][4]}</td>
+          <td>{props.contents[7][5]}</td>
+          <td>{props.contents[7][6]}</td>
+          <td>{props.contents[7][7]}</td>
+          <td>{props.contents[7][8]}</td>
+          <td>{props.contents[7][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[8][0]}</td>
+          <td>{props.contents[8][1]}</td>
+          <td>{props.contents[8][2]}</td>
+          <td>{props.contents[8][3]}</td>
+          <td>{props.contents[8][4]}</td>
+          <td>{props.contents[8][5]}</td>
+          <td>{props.contents[8][6]}</td>
+          <td>{props.contents[8][7]}</td>
+          <td>{props.contents[8][8]}</td>
+          <td>{props.contents[8][9]}</td>
+        </tr>
+        <tr>
+          <td>{props.contents[9][0]}</td>
+          <td>{props.contents[9][1]}</td>
+          <td>{props.contents[9][2]}</td>
+          <td>{props.contents[9][3]}</td>
+          <td>{props.contents[9][4]}</td>
+          <td>{props.contents[9][5]}</td>
+          <td>{props.contents[9][6]}</td>
+          <td>{props.contents[9][7]}</td>
+          <td>{props.contents[9][8]}</td>
+          <td>{props.contents[9][9]}</td>
         </tr>
       </tbody>
     </table>
