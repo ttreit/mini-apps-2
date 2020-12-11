@@ -10,18 +10,18 @@ function Board(props) {
       <tbody>
         <tr>
           <td>{props.contents[0][0]}</td>
-          <td>2</td>
-          <td></td>
+          <td>{props.contents[0][1]}</td>
+          <td>{props.contents[0][2]}</td>
         </tr>
         <tr>
-          <td>B</td>
-          <td>3</td>
-          <td>1</td>
+          <td>{props.contents[1][0]}</td>
+          <td>{props.contents[1][1]}</td>
+          <td>{props.contents[1][2]}</td>
         </tr>
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>B</td>
+          <td>{props.contents[2][0]}</td>
+          <td>{props.contents[2][1]}</td>
+          <td>{props.contents[2][2]}</td>
         </tr>
       </tbody>
     </table>

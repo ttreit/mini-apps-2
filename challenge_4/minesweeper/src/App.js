@@ -7,7 +7,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      liveBoard: [
+        [9, 9, 9],
+        [9, 9, 9],
+        [9, 9, 9]
+      ]
     }
 
     this.handleLeftClick = this.handleLeftClick.bind(this);
@@ -24,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Board contents={boardContents}/>
+        <Board contents={this.state.liveBoard}/>
       </div>
     );
   }

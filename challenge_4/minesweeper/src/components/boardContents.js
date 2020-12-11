@@ -11,7 +11,7 @@ function boardContents() {
 export default boardContents();
 
 //***Possible items to display***
-//Unclicked Tile
+//Unclicked Tile -- 9
 //Uncliked Tile with Flag
 //Revealed Tile - Bomb
 //Revealed Tile - Blank Space
