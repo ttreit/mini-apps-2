@@ -27,27 +27,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({liveboard:
-      [
-        [0, 9, 9, 9, 9, 9, 9, 9, 9, 0],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [0, 9, 9, 9, 9, 9, 9, 9, 9, 0]
-      ]
-    })
+    console.log('component did mount');
+    this.setState({liveBoard: blankBoard})
   }
 
-  handleLeftClick() {
+  handleLeftClick(event) {
     console.log('Left Click');
   }
 
-  handleRightClick() {
+  handleRightClick(event) {
     console.log('Right Click');
   }
 
