@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Board contents={this.state.liveBoard}/>
+        <Board contents={this.state.liveBoard} handleLeftClick={this.handleLeftClick}/>
       </div>
     );
   }

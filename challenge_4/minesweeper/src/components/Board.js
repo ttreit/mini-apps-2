@@ -4,9 +4,9 @@ function Board(props) {
   return <div>
     <table>
       <tbody>
-        {props.contents.map(rows => {
-          let row = rows.map(cell => <td>{cell}</td>);
-          return <tr>{row}</tr>
+        {props.contents.map((rows, index) => {
+          let row = rows.map((cell, index) => <td key={index} onClick={props.handleLeftClick}>{cell}</td>);
+          return <tr key={index}>{row}</tr>
         })}
       </tbody>
     </table>
