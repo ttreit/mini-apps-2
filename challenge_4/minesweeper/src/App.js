@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      liveBoard: []
+      liveBoard: [],
+      gameOver: false
     }
 
     this.handleLeftClick = this.handleLeftClick.bind(this);
@@ -16,15 +17,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('component did mount');
-    this.setState({liveBoard: blankBoard})
+    this.setState({liveBoard: gameBoard});
+
   }
 
   handleLeftClick(event) {
-    console.log('Left Click');
-    //update state with gameBoard cell
-      //get cell that was clicked on
-      //
+    let cellValue = event.target.getAttribute('cellvalue');
+
+    //if click bomb
+    if (cellValue === '10') {
+      this.setState({gameOver: true});
+    } else if (cellValue) {
+      console.log('whew not a bomb');
+    }
   }
 
   handleRightClick(event) {
@@ -34,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Board contents={this.state.liveBoard}/>
+        <Board contents={this.state.liveBoard} handleLeftClick={this.handleLeftClick} gameOver={this.state.gameOver}/>
       </div>
     );
   }
