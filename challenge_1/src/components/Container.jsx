@@ -13,7 +13,6 @@ class Container extends React.Component {
       <div>
         <SearchBar />
         <ResultsTable />
-        <ResultsRow />
       </div>
     )
   }

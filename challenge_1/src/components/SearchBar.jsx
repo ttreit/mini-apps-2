@@ -8,7 +8,9 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <h3>Search Bar</h3>
+        <form>
+          <input type='text' placeholder='Search...' />
+        </form>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ResultsRow from './ResultsRow.jsx';
 
 class ResultsTable extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class ResultsTable extends React.Component {
   render() {
     return (
       <div>
-        <h1>Results Table</h1>
+        <ResultsRow />
       </div>
     )
   }
