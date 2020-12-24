@@ -11,7 +11,6 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar />
         <ResultsTable />
       </div>
     )
