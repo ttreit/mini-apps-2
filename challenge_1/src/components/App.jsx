@@ -30,16 +30,8 @@ class App extends Component {
     }
 
     getData(this.state.inputText)
-      .then((data) => console.log('DATA', data));
-
-
-
-    //get this.state.inputText from json-server
-    //`http://localhost:3000/events?q=${this.state.inputText}`
-
-
-    //end with:
-    //this.setState({ inputText: ''})
+      .then((data) => console.log('DATA', data))
+      .then(this.setState({ inputText: ''}))
   }
 
   render() {
