@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResultsRow from './ResultsRow.jsx';
 import ResultsTable from './ResultsTable.jsx';
+import SearchBar from './SearchBar.jsx';
 
 class Container extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Container extends React.Component {
   render() {
     return (
       <div>
+        <SearchBar />
         <ResultsTable />
         <ResultsRow />
       </div>
