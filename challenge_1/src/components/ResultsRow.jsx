@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { render } from 'react-dom';
 
-class ResultsRow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+function ResultsRow(props) {
+  const data = props.data;
+  const listRows = data.map((row) =>
+    <li>
+      {row.description}
+    </li>
+  );
 
-  render() {
-    return (
-      <div>
-        <h2>Results Row</h2>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <ul>
+        {listRows}
+      </ul>
+    </div>
+  )
+
 }
 
 export default ResultsRow;

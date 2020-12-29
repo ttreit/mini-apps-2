@@ -7,7 +7,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputText: ''
+      inputText: '',
+      data: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,15 +31,14 @@ class App extends Component {
     }
 
     getData(this.state.inputText)
-      .then((data) => console.log('DATA', data))
+      .then((data) => this.setState({data: data}))
       .then(this.setState({ inputText: ''}))
   }
 
   render() {
     return (
       <div>
-        <SearchBar inputText={this.state.inputText} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-        <Container />
+        <Container inputText={this.state.inputText} handleChange={this.handleChange} handleSubmit={this.handleSubmit} data={this.state.data}/>
       </div>
     )
   }

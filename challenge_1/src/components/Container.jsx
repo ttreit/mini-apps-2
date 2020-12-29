@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ResultsRow from './ResultsRow.jsx';
 import ResultsTable from './ResultsTable.jsx';
 import SearchBar from './SearchBar.jsx';
 
@@ -11,7 +10,8 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <ResultsTable />
+        <SearchBar inputText={this.props.inputText} handleChange={this.props.handleChange} handleSubmit={this.props.handleSubmit} />
+        <ResultsTable data={this.props.data} />
       </div>
     )
   }

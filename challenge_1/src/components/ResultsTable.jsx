@@ -9,7 +9,7 @@ class ResultsTable extends React.Component {
   render() {
     return (
       <div>
-        <ResultsRow />
+        <ResultsRow data={this.props.data} />
       </div>
     )
   }
