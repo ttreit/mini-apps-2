@@ -25,7 +25,7 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     async function getData(searchPhrase) {
-      let response = await fetch(`http://localhost:3000/events?q=${searchPhrase}`)
+      let response = await fetch(`http://localhost:3000/events?q=${searchPhrase}&_page=1&_limit=10`)
       let data = await response.json()
       return data;
     }
