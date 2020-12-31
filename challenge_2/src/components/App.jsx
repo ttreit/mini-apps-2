@@ -29,7 +29,20 @@ class App extends Component {
       .then((thirtyDayData) => {
         console.log('30', thirtyDayData.data.bpi)
         //update state with data
-
+        let dates = Object.keys(thirtyDayData.data.bpi);
+        let prices = Object.values(thirtyDayData.data.bpi);
+        this.setState({
+          priceData: {
+            labels: dates,
+            datasets: [
+              {
+                label: 'Price',
+                data: prices,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)'
+              }
+            ]
+          }
+        })
       })
       .catch((error) => {
         console.log(error);
