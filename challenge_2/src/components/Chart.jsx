@@ -8,13 +8,18 @@ class Chart extends Component {
 
   render() {
     return (
-      <div className='chart'>
-        <Line
-          data={this.props.priceData}
-          options={{
-            maintainAspectRatio: false
-          }}
-        />
+      <div>
+        <div className='chart'>
+          <Line
+            data={this.props.priceData}
+            options={{
+              maintainAspectRatio: false
+            }}
+          />
+        </div>
+        <h6>
+        Powered by <a href='https://www.coindesk.com/price/bitcoin'>CoinDesk</a>
+          </h6>
       </div>
     )
   }
