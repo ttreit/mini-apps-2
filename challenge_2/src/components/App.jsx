@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Chart from './Chart.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        This is App.jsx
+        <Chart />
       </div>
     )
   }
